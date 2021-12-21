@@ -1,0 +1,42 @@
+<% include header.html%>
+    <div class="layui-carousel" id="banner">
+        <div carousel-item="">
+            <div>
+                <img src="../static/imgs/banner/banner1.png" alt="">
+            </div>
+            <div> <img src="../static/imgs/banner/banner2.png" alt=""></div>
+            <div><img src="../static/imgs/banner/banner3.png" alt=""></div>
+        </div>
+    </div>
+    <div class="layui-container index">
+        <div class="layui-row">
+            <% include left.html %>
+                <div class="layui-col-md10">
+                    <div id="box">
+                        <h1 style="text-align: center;">
+                            <%=title%>
+                        </h1>
+                        <p style="text-align: center;"><%=authour%></p>
+                        <p><%=content%></p>
+                    </div>
+                </div>
+
+        </div>
+    </div>
+    <% include footer.html %>
+        <script src="../static/js/util.js"></script>
+        <script>
+            const url = decodeURI(location.href)
+            const i = url.split('?')[1]
+            const id = i.split('=')[1]
+            request({
+                url: '/blogOne?id=' + id,
+                method: 'GET'
+            }).then(res => {
+                console.log(res)
+                dom('#box').innerHTML = res.data.content
+            })
+        </script>
+        </body>
+
+        </html>

@@ -1,0 +1,79 @@
+<% include header.html %>
+    <div class="layui-carousel" id="banner">
+        <div carousel-item="">
+            <div>
+                <img src="static/imgs/banner/banner1.png" alt="">
+            </div>
+            <div> <img src="static/imgs/banner/banner2.png" alt=""></div>
+            <div><img src="static/imgs/banner/banner3.png" alt=""></div>
+        </div>
+    </div>
+    <div class="layui-container index">
+        <div class="layui-row">
+            <% include left.html %>
+                <div class="layui-col-md8">
+                    <div class="site-demo-flow blog-content" id="LAY_demo3">
+                        <%data.forEach(function(item){%>
+                            <div class="idx-item">
+                                <img height="232" src="static/imgs/banner/banner4.jpg" alt="">
+                                <div class="layui-row item-title"><span class="layui-col-md1"><%=type%></span>
+                                    <a href="/detail?id=<%=item.id%>">
+                                        <h3 class="layui-col-md10">
+                                            <%=item.blog_title%>
+                                        </h3>
+                                    </a>
+                                </div>
+                                <a href="/detail?id=<%=item.id%>">
+                                    <p>
+                                        <%=item.blog_content%>
+                                    </p>
+                                </a>
+                                <div class="item-user">
+                                    <img src="static/imgs/tx.png" alt="">
+                                    <span></span>
+                                    <span>这个人很懒，他没有填写标签内容。</span>
+                                </div>
+                                <div class="layui-row item-info">
+                                    <div class="layui-col-md4">
+                                        <span>
+                                            <%=item.create_time%>
+                                        </span>
+                                    </div>
+                                    <div class="layui-col-md8">
+                                        <span><img src="static/imgs/dz.png" alt="" srcset="">9999</span>
+                                        <span><img src="static/imgs/ll.png" alt="" srcset="">9999</span>
+                                        <span><img src="static/imgs/sc.png" alt="" srcset="">9999</span>
+                                        <span><img src="static/imgs/fx.png" alt="" srcset="">0099</span>
+                                    </div>
+                                </div>
+                                <div class="item-line"></div>
+                            </div>
+                            <%})%>
+                    </div>
+                </div>
+                <!-- <div class="layui-col-md3 idx-r">
+                <div class="r-user">
+                    <h3>你好，欢迎登陆HF</h3>
+                    <p>登陆HF，探索更多关于汉文化的秘密</p>
+                    <button type="button" id='toLogin' class="layui-btn layui-btn-primary">登录</button>
+                </div>
+            </div> -->
+        </div>
+    </div>
+
+    <script>
+        $('#toLogin').on('click', () => {
+            location.href = '/toLogin'
+        })
+        layui.use('carousel', function () {
+            var carousel = layui.carousel;
+            //建造实例
+            carousel.render({
+                elem: '#banner'
+                , width: '100%' //设置容器宽度
+                , arrow: 'always' //始终显示箭头
+                // ,anim: 'updown' //切换动画方式
+            });
+        });
+    </script>
+    <% include footer.html %>

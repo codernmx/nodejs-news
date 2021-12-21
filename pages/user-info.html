@@ -1,0 +1,131 @@
+<!-- 个人中心 -->
+<% include header.html %>
+<div class="user-info">
+    <img height="236px" src="static/imgs/user-info.png" alt="">
+    <div class="layui-container ui-body">
+        <div class="layui-row layui-col-space10">
+            <div class="layui-col-md3">
+                <div class='info-user'>
+                    <img src="static/imgs/user-head.png" alt="">
+                    <span>王权</span>
+                    <span>金牌博主</span>
+                </div>
+                <div class="layui-row ui-ph">
+                    <div class="layui-col-md2">
+                        <p>2021</p>
+                        <p>原创</p>
+                    </div>
+                    <div class="layui-col-md2">
+                        <p>1</p>
+                        <p>周排名</p>
+                    </div>
+                    <div class="layui-col-md2">
+                        <p>20</p>
+                        <p>总排名</p>
+                    </div>
+                    <div class="layui-col-md2">
+                        <p>999+</p>
+                        <p>访问</p>
+                    </div>
+                    <div class="layui-col-md2">
+                        <p>11</p>
+                        <p>历史</p>
+                    </div>
+                </div>
+                <div class="layui-row ui-ph">
+                    <div class="layui-col-md2">
+                        <p>2021</p>
+                        <p>原创</p>
+                    </div>
+                    <div class="layui-col-md2">
+                        <p>1</p>
+                        <p>周排名</p>
+                    </div>
+                    <div class="layui-col-md2">
+                        <p>20</p>
+                        <p>总排名</p>
+                    </div>
+                    <div class="layui-col-md2">
+                        <p>999+</p>
+                        <p>访问</p>
+                    </div>
+                    <div class="layui-col-md2">
+                        <p>11</p>
+                        <p>历史</p>
+                    </div>
+                </div>
+                <div class="layui-btn-container ui-btn">
+                    <button type="button" class="layui-btn layui-btn-primary">私信</button>
+                    <button type="button" class="layui-btn">关注</button>
+                </div>
+            </div>
+            <div class="layui-col-md9">
+                <form class="layui-form" action="">
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <label class="layui-form-label">文章类型</label>
+                        <div class="layui-input-inline">
+                            <select name="quiz">
+                                <option value="">原创</option>
+                                <option value="你工作的第一个城市">转载</option>
+                                <option value="你的工号">翻译</option>
+                                <option value="你最喜欢的老师">其他</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <label class="layui-form-label">排序</label>
+                        <div class="layui-input-inline">
+                            <select name="modules" lay-verify="required" lay-search="">
+                                <option value="16">发布时间</option>
+                                <option value="17">获赞数</option>
+                                <option value="18">访问量</option>
+                                <option value="19">热度</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                </form>
+
+                <div class="blog-ct">
+                    <div class="blog-item">
+                        <h3>我向你奔赴而来，你就是星辰大海</h3>
+                        <p>每当你向我走来,告诉我星辰大海,会不会我们的爱像星辰守护大海,不曾离开.我向你奔赴而来,你就是星辰大海,我眼中炽热的恒星,长夜里照我前行会不会我们
+                            的爱,会被风吹向大海不再回来每当你向我走来告诉我星辰大海，每当你向我走来,告诉我星辰大海,会不会我们的，每当你向我走来,告诉我星辰大海,会……</p>
+                        <div>
+                            <span>2021.01.20   23：25：20</span> <span>899+</span> <span>999+</span>
+                        </div>
+                    </div>
+                    <div class="blog-item">
+                        <h3>我向你奔赴而来，你就是星辰大海</h3>
+                        <p>每当你向我走来,告诉我星辰大海,会不会我们的爱像星辰守护大海,不曾离开.我向你奔赴而来,你就是星辰大海,我眼中炽热的恒星,长夜里照我前行会不会我们
+                            的爱,会被风吹向大海不再回来每当你向我走来告诉我星辰大海，每当你向我走来,告诉我星辰大海,会不会我们的，每当你向我走来,告诉我星辰大海,会……</p>
+                        <div>
+                            <span>2021.01.20   23：25：20</span> <span>899+</span> <span>999+</span>
+                        </div>
+                    </div>
+
+                    <div id="uiblogPage" class="uiblog-page"></div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+ 
+<script src="static/layui/layui.all.js"></script> 
+<script>
+    layui.use(['laypage', 'layer'], function(){
+      var laypage = layui.laypage
+      ,layer = layui.layer;
+      
+      //总页数低于页码总数
+      laypage.render({
+        elem: 'uiblogPage'
+        ,count: 50 //数据总数
+      });
+      
+    });
+</script>
+<% include footer.html %>

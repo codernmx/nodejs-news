@@ -1,0 +1,312 @@
+@charset "utf-8";
+
+body {
+    color: #453D3E;
+}
+.header{
+    height: 80px;
+    line-height: 80px;
+}
+.header .header-nav {
+    border-bottom-width: 0;
+}
+.header .header-nav li {
+    padding: 0 10px;
+}
+.header .header-tab{
+    margin: 0;
+}
+.header .search-item {
+    border: 1px solid #eee;
+    border-radius: 5px;
+    margin-top: 20px;
+    max-width: 200px;
+}
+.header .serach-icon {
+    cursor: pointer;
+}
+.header .search-item input{
+    border-width: 0;
+}
+.header .search-input {
+    max-width: 150px;
+}
+.bge63{
+    background-color: #E63142;
+}
+.header button {
+    color: #fff;
+}
+
+/* login  s */
+.login{
+    background: url("../imgs/login-bg.png");
+    padding-top: 150px;
+    padding-bottom: 150px;
+    color: #FBFBF9;
+}
+.login .log-box{
+    height: 341px;
+    width: 570px;
+    margin: 0 auto;
+}
+.login .log-box .login-pic{
+    padding-top: 62px;
+    padding-left: 40px;
+    padding-bottom: 22px;
+}
+.login .log-box p{
+    line-height: 18px;
+    padding-left: 24px;
+    text-indent: 15px;
+}
+.login .log-box .login-left{
+    background-color: #453D3E;
+    opacity: 0.9;
+    padding-bottom: 81px;
+    min-height: 413px;
+}
+.login .log-box .login-right{
+    background-color:rgba(254, 253, 253, 0.73);
+    padding: 25px 40px 27px 40px;
+}
+.login .log-box .login-right h3{
+    font-size: 18px;
+    text-align: center;
+    color: #292928;
+}
+.login .log-box .login-right fieldset {
+    border-color: #313131;
+    text-align: center;
+}
+.login .log-box .login-right fieldset  legend{
+    font-size: 12px;
+    color: #292928;
+    margin-left: 0;
+}
+.login .log-box .login-right .layui-input-block{
+    margin-left: 0;
+}
+.login .log-box .login-right button{
+    width: 100%;
+    background-color: #E63142;
+}
+.login .log-box .login-right .login-sf div{
+    text-align: center;
+    cursor: pointer;
+}
+.login .log-box .login-right .login-pwd{
+    font-size: 12px;
+}
+/* login  e */
+/* register s */
+.register{
+    background: url("../imgs/login-bg.png");
+    padding-top: 150px;
+    padding-bottom: 150px;
+    color: #292928;
+}
+.register>div{
+    width: 378px;
+    height: 526px;
+    margin: auto;
+    background-color:rgba(254, 253, 253, 0.73);   
+    padding: 42px 280px 64px 280px;
+}
+.register>div h3{
+    font-size: 36px;
+    text-align: center;
+}
+.register>div fieldset {
+    border-color: #313131;
+    text-align: center;
+}
+.register>div fieldset  legend{
+    font-size: 12px;
+    color: #292928;
+    margin-left: 0;
+}
+.register>div .layui-input-block{
+    margin-left: 0;
+}
+.register>div .reg-code{
+    margin-left: 30px;
+}
+.register>div  button{
+    width: 100%;
+}
+.register>div .regxy{
+    display: inline-block;
+}
+.register>div .layui-form-item .layui-form-checkbox[lay-skin=primary]{
+    margin-top: 0;
+}
+
+/* register e */
+
+/* index s */
+.index{
+    margin-top: 36px;
+}
+.index .index-lf-menu{
+    color: #453D3E;
+    max-width: 235px;
+}
+
+.index .index-lf-menu li{
+    line-height: 38px;
+    text-align: center;
+    cursor: pointer;
+}
+.index .blog-content{
+    padding: 32px 26px;
+}
+.index .blog-content .item-title{
+    font-size: 16px;
+    font-weight: normal;
+    color: #453D3E;
+    margin-top: 10px;
+}
+.index .blog-content .item-title>span{
+    background-color: #E63142;
+    text-align: center;
+    color: #fff;
+}
+.index .blog-content .idx-item p {
+    font-size: 12px;
+    font-weight: normal;
+    color: #878485;
+    line-height: 15px;
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-indent: 20px;
+    margin: 10px 0;
+} 
+.index .blog-content .idx-item .item-user{
+    margin-bottom: 10px;
+}
+.index .blog-content .idx-item .item-user>img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.index .blog-content .idx-item .item-user:nth-child(2){
+    font-size: 13px;
+    color: #453D3E;
+    line-height: 18px;
+}
+.index .blog-content .idx-item .item-user:nth-child(3){
+    font-size: 12px;
+    color: #878485;
+    line-height: 18px;
+}
+.index .idx-item .item-info{
+    font-size: 12px;
+    color: #878485;
+    line-height: 15px;
+}
+.index .idx-item .item-line {
+    margin-top: 5px;
+    height: 1px;
+    background-color: #ddd;
+}
+
+.index .idx-r .r-user {
+    font-size: 20px;
+    color: #453D3E;
+    line-height: 38px;
+    padding: 33px 15px 38px 17px;
+    box-shadow: 0px 1px 1px 0px rgba(152, 151, 151, 0), 0px 20px 23px 0px rgba(0, 0, 0, 0.15);
+}
+.index .idx-r .r-user>p {
+    color:#989696;
+    font-size: 14px;
+}
+.index .idx-r .r-user>button{
+    width: 100%;
+}
+
+/* index e */
+
+/* user-info s */
+.user-info .ui-body{
+    margin-top: 10px;
+}
+
+.user-info .info-user>img {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+}
+.user-info .info-user>span:nth-child(2) {
+    font-size: 23px;
+    color: #453D3E;
+    line-height: 18px;
+}
+.user-info .info-user>span:nth-child(3) {
+    font-size: 13px;
+    color: #8E8C8C;
+    line-height: 38px;
+}
+.user-info .ui-ph{
+    font-size: 14px;
+    color: #453D3E;
+    line-height: 18px;
+    text-align: center;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #BFBFBF;
+}
+.user-info .ui-btn{
+    text-align: center;
+    margin-top: 20px;
+}
+.user-info .blog-ct .blog-item{
+    border-bottom: 1px solid #BFBFBF;
+    margin-top: 20px;
+}
+.user-info .blog-ct .blog-item>h3 {
+    font-size: 19px;
+    color: #453D3E;
+    line-height: 18px;
+}
+.user-info .blog-ct .blog-item>p{
+    font-size: 13px;
+    color: #878485;
+    line-height: 18px;
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-indent: 20px;
+    margin-top: 13px;
+    margin-bottom: 13px;
+}
+.user-info .blog-ct .blog-item>div{
+    font-size: 13px;
+    color: #878485;
+    line-height: 18px;
+    margin-bottom: 16px;
+}
+.uiblog-page{
+    text-align: right;
+}
+/* user-info e */
+
+/* footer */
+
+.footer {
+    padding-top: 53px;
+    color: #929291;
+    line-height: 24px;
+}
+.footer a {
+    color: #929291;
+}

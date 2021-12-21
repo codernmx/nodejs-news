@@ -1,0 +1,193 @@
+<% include header.html %>
+    <div class="user-info">
+        <img height="236px" src="../static/imgs/user-info.png" alt="">
+        <div class="layui-container ui-body">
+            <div class="layui-row layui-col-space10">
+                <div class="layui-col-md3">
+                    <div class='info-user'>
+                        <img src="../static/imgs/user-head.png" alt="">
+                        <span>王权</span>
+                        <span>金牌博主</span>
+                    </div>
+                    <div class="layui-row ui-ph">
+                        <div class="layui-col-md2">
+                            <p>2021</p>
+                            <p>原创</p>
+                        </div>
+                        <div class="layui-col-md2">
+                            <p>1</p>
+                            <p>周排名</p>
+                        </div>
+                        <div class="layui-col-md2">
+                            <p>20</p>
+                            <p>总排名</p>
+                        </div>
+                        <div class="layui-col-md2">
+                            <p>999+</p>
+                            <p>访问</p>
+                        </div>
+                        <div class="layui-col-md2">
+                            <p>11</p>
+                            <p>历史</p>
+                        </div>
+                    </div>
+                    <div class="layui-row ui-ph">
+                        <div class="layui-col-md2">
+                            <p>2021</p>
+                            <p>原创</p>
+                        </div>
+                        <div class="layui-col-md2">
+                            <p>1</p>
+                            <p>周排名</p>
+                        </div>
+                        <div class="layui-col-md2">
+                            <p>20</p>
+                            <p>总排名</p>
+                        </div>
+                        <div class="layui-col-md2">
+                            <p>999+</p>
+                            <p>访问</p>
+                        </div>
+                        <div class="layui-col-md2">
+                            <p>11</p>
+                            <p>历史</p>
+                        </div>
+                    </div>
+                    <div class="layui-btn-container ui-btn">
+                        <button type="button" class="layui-btn layui-btn-primary">私信</button>
+                        <button type="button" class="layui-btn">关注</button>
+                    </div>
+                </div>
+                <iframe id="iframe_display" name="iframe_display" style="display: none;"></iframe>
+                <div class="layui-col-md9">
+                    <!-- <form class="" action="http://localhost:3000/addBlog" method="post" target="iframe_display"> -->
+                    <form class="" action="http://localhost:3000/editBlog" method="post">
+                        <div class="layui-form-item">
+                            <div class="layui-inline-block">
+                                <label class="layui-form-label">主题</label>
+                                <div class="layui-input-block">
+                                    <input class="layui-input" type="text" name='title' value="<%=data.blog_title%>">
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">类型</label>
+                            <div class="layui-input-block">
+                                <select name="type" class="type" style="height: 35px;width: 100px;">
+                                    <option value="1">军事</option>
+                                    <option value="2">科技</option>
+                                    <option value="3">体育</option>
+                                    <option value="4">娱乐</option>
+                                    <option value="5">教育</option>
+                                </select>
+                            </div>
+                        </div>
+                        <input class="layui-input" style="display: none;" type="text" name='id' value="<%=data.id%>">
+                        <!-- <div class="layui-form-item">
+                            <label class="layui-form-label">封面</label>
+                            <div class="layui-input-block">
+                                <input class="layui-input" type="file" name="file" id="">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">前言</label>
+                            <div class="layui-input-block">
+                                <input class="layui-input" type="text" name="preface" id="">
+                            </div>
+                        </div> -->
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">正文</label>
+                            <div class="layui-input-block">
+                                <!-- <div id="view">
+                                </div> -->
+                                <textarea class="layui-textarea" name="content" id="content" rows="20"><%=data.blog_content%></textarea>
+                            </div>
+                        </div>
+                        <div class="layui-form-item" style="text-align: center;">
+                            <button type="submit" id='addBlog' class="layui-btn bge63">提交</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <% include footer.html %>
+
+    <script src="https://cdn.jsdelivr.net/npm/wangeditor@latest/dist/wangEditor.min.js"></script>
+    <script src="../static/js/util.js"></script>
+    <script type="text/javascript">
+        const E = window.wangEditor
+        const editor = new E('#view')
+        // const $text1 = document.querySelector('#content')
+        let content
+        editor.config.onchange = function (html) {
+            // 第二步，监控变化，同步更新到 textarea
+            content = html
+        }
+        editor.create()
+
+        const oTitle = dom('input[name=title]')
+        const oType = dom('select[name=type]')
+        const oFile = dom('input[name=file]')
+        const oPreface = dom('input[name=preface]')
+        const addBlog = dom('#addBlog')
+        // console.log(oType)
+        let type = 0;
+        oType.onchange = (e) => {
+            type = e.target.value
+        }
+        addBlog.onclick = function () {
+            if (!oTitle.value) {
+                alert('标题不能为空')
+                return
+            }
+            if (oFile.files.length != 1) {
+                alert('请上传封面')
+                return
+            }
+            if (!oPreface.value) {
+                alert('前言不能为空')
+                return
+            }
+            if (!content) {
+                alert('博文内容不能为空')
+                return
+            }
+            //上传封面
+            const data = new FormData()
+            data.append('file', oFile.files[0])
+            request({
+                url: '/upload',
+                method: 'POST',
+                // type: 'multipart/form-data',
+                data
+            }).then(res => {
+                console.log(res)
+                if (res.code === 2000) {
+                    const d = {
+                        title: oTitle.value,
+                        type,
+                        bg_img: res.data,
+                        preface: oPreface.value,
+                        content
+                    }
+                    request({
+                        url: '/addBlog',
+                        type: 'application/json',
+                        method: 'POST',
+                        data: JSON.stringify(d)
+                    })
+                        .then(res => {
+                            alert(res.msg)
+                        })
+                }
+            })
+        }
+    </script>
+
+    </body>
+
+    </html>

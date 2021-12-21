@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    <%= title%>
+  </title>
+  <link rel="stylesheet" href="static/layui/css/layui.css">
+  <link rel="stylesheet" href="static/css/style.css">
+  <script src="static/layui/layui.all.js"></script>
+  <script src="static/js/jquery-3.5.1.js"></script>
+  <script src="static/js/util.js"></script>
+</head>
+
+<body>
+  <div class="header">
+    <div class="layui-container">
+      <div class="layui-row">
+        <div class="layui-col-md1">
+          <img src="static/imgs/logo.png" alt="" srcset="" style="width: 100px;">
+        </div>
+        <div class="layui-col-md6">
+          <div class="layui-tab layui-tab-brief header-tab" lay-filter="docDemoTabBrief">
+            <ul class="layui-tab-title header-nav">
+              <li><a href="/">首页</a></li>
+              <li><a href="/?type=1">军事</a></li>
+              <li><a href="/?type=2">科技</a></li>
+              <li><a href="/?type=3">体育</a></li>
+              <li><a href="/?type=4">娱乐</a></li>
+              <li><a href="/?type=5">教育</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="layui-col-md5">
+          <div class="layui-row">
+            <div class="layui-col-md6">
+              <div class="layui-form-item search-item">
+                <div class="layui-input-inline search-input">
+                  <input type="text" name="password" required lay-verify="required" placeholder="着我华夏衣裳，观我千年繁华"
+                    autocomplete="off" class="layui-input">
+                </div>
+                <div class="layui-form-mid layui-word-aux serach-icon"><i class="layui-icon layui-icon-search"></i>
+                </div>
+              </div>
+            </div>
+            <div class="layui-col-md2" id='toLogin'>
+              登陆
+            </div>
+            <div class="layui-col-md2">
+              <a href="/admin">后台</a>
+              <!-- <button class="layui-btn bge63"><img height="12" src="static/imgs/ymb.png" alt="" srcset=""> 管理后台</button> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
